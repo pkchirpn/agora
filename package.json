@@ -1,0 +1,26 @@
+{
+  "name": "agora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev src/index.ts",
+    "start": " tsc && nodemon build/index.js",
+    "start:prod": "node build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.14",
+    "agora-access-token": "^2.0.4",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
