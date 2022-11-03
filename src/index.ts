@@ -3,12 +3,12 @@ const app = express();
 const port = process.env.PORT || 5005;
 const morgan = require("morgan");
 app.use(morgan("dev"));
-
+require("dotenv").config();
 import { router } from "./routes/agora-access.route";
 app.use("/api", router);
 
 app.all("/", (req: Request, res: Response) => {
-  res.json("Welcome to agora token generator");
+  res.status(200).json("Welcome to agora token generator");
 });
 
 app.all("*", (req: Request, res: Response) => {

@@ -1,11 +1,11 @@
 const { RtcRole } = require("agora-access-token");
 
 // Rtc Examples
-const appID = "d37f7ee3abd34ceeb5bf6cdbf75b44d7";
-const appCertificate = "def92b0433dc4f2c8cf42e94e602f1bc";
-const channelName = "tuktuk-demo";
-const uid = 2882341273;
-const account = "2882341273";
+const appID = process.env.APP_ID;
+const appCertificate = process.env.APP_CERTIFICATE;
+const channelName = process.env.CHANNEL_NAME;
+const uid = process.env.UID;
+const account = process.env.ACCOUNT;
 const role = RtcRole.PUBLISHER;
 
 const expirationTimeInSeconds = 3600;

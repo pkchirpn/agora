@@ -12,9 +12,10 @@ import {
   role,
   privilegeExpiredTs,
   account,
+  channelName
 } from "../config/agora.config";
 
-async function buildTokenWithUid(channelName: any): Promise<string> {
+async function buildTokenWithUid(): Promise<string> {
   // Build token with uid
   const tokenA = RtcTokenBuilder.buildTokenWithUid(
     appID,
@@ -27,7 +28,7 @@ async function buildTokenWithUid(channelName: any): Promise<string> {
   return tokenA;
 }
 
-async function buildTokenWithAccount(channelName: any): Promise<string> {
+async function buildTokenWithAccount(): Promise<string> {
   // Build token with user account
   const tokenB = RtcTokenBuilder.buildTokenWithAccount(
     appID,

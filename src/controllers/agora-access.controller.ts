@@ -8,8 +8,7 @@ import {
 
 const generateTokenWithUid = async (req: Request, res: Response) => {
   try {
-    let channelName = req.query?.channelName || "tuktuk";
-    const token = await buildTokenWithUid(channelName);
+    const token = await buildTokenWithUid();
     if (token) {
       return res.status(200).json({
         message: "Token generated successfully",
@@ -29,8 +28,7 @@ const generateTokenWithUid = async (req: Request, res: Response) => {
 };
 const generateTokenWithAccount = async (req: Request, res: Response) => {
   try {
-    let channelName = req.query?.channelName || "tuktuk";
-    const token = await buildTokenWithAccount(channelName);
+    const token = await buildTokenWithAccount();
     if (token) {
       return res.status(200).json({
         message: "Token generated successfully",
