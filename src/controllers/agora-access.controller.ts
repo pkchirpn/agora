@@ -5,20 +5,26 @@ import {
   buildTokenWithUid,
 } from "../helper/generateToken";
 
-
 const generateTokenWithUid = async (req: Request, res: Response) => {
   try {
-    const token = await buildTokenWithUid();
-    if (token) {
-      return res.status(200).json({
-        message: "Token generated successfully",
-        token,
-        tokenCreatedAt: new Date().toString(),
+    const channelName = req.query.channelName;
+    if (typeof channelName === "string") {
+      const token = await buildTokenWithUid(channelName);
+      if (token) {
+        return res.status(200).json({
+          message: "Token generated successfully",
+          token,
+          tokenCreatedAt: new Date().toString(),
+        });
+      }
+      return res.status(400).json({
+        message: "Error generating token",
+      });
+    } else {
+      return res.status(400).json({
+        message: "Send channelName in query",
       });
     }
-    return res.status(400).json({
-      message: "Error generating token",
-    });
   } catch (error) {
     return res.status(500).json({
       message: "Error generating token",
@@ -28,17 +34,24 @@ const generateTokenWithUid = async (req: Request, res: Response) => {
 };
 const generateTokenWithAccount = async (req: Request, res: Response) => {
   try {
-    const token = await buildTokenWithAccount();
-    if (token) {
-      return res.status(200).json({
-        message: "Token generated successfully",
-        token,
-        tokenCreatedAt: new Date().toString(),
+    const channelName = req.query.channelName;
+    if (typeof channelName === "string") {
+      const token = await buildTokenWithAccount(channelName);
+      if (token) {
+        return res.status(200).json({
+          message: "Token generated successfully",
+          token,
+          tokenCreatedAt: new Date().toString(),
+        });
+      }
+      return res.status(400).json({
+        message: "Error generating token",
+      });
+    } else {
+      return res.status(400).json({
+        message: "Send channelName in query",
       });
     }
-    return res.status(400).json({
-      message: "Error generating token",
-    });
   } catch (error) {
     return res.status(500).json({
       message: "Error generating token",
