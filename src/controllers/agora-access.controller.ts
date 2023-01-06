@@ -15,12 +15,6 @@ const generateTokenWithUid = async (req: Request, res: Response) => {
         return res.status(200).json({
           message: "Token generated successfully",
           token,
-          data: {
-            uid,
-            role,
-            privilegeExpiredTs,
-            account,
-          },
         });
       }
       return res.status(400).json({
@@ -47,12 +41,6 @@ const generateTokenWithAccount = async (req: Request, res: Response) => {
         return res.status(200).json({
           message: "Token generated successfully",
           token,
-          data: {
-            uid,
-            role,
-            privilegeExpiredTs,
-            account,
-          },
         });
       }
       return res.status(400).json({
