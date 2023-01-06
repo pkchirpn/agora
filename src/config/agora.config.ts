@@ -8,7 +8,7 @@ const uid = process.env.UID;
 const account = process.env.ACCOUNT;
 const role = RtcRole.PUBLISHER;
 
-const expirationTimeInSeconds = 3600;
+const expirationTimeInSeconds = 86400;
 
 const currentTimestamp = Math.floor(Date.now() / 1000);
 
