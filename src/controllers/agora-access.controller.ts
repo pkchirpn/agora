@@ -4,7 +4,6 @@ import {
   buildTokenWithAccount,
   buildTokenWithUid,
 } from "../helper/generateToken";
-import { uid, role, privilegeExpiredTs, account } from "../config/agora.config";
 
 const generateTokenWithUid = async (req: Request, res: Response) => {
   try {
