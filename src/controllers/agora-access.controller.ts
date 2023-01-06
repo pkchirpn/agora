@@ -4,6 +4,7 @@ import {
   buildTokenWithAccount,
   buildTokenWithUid,
 } from "../helper/generateToken";
+import { uid, role, privilegeExpiredTs, account } from "../config/agora.config";
 
 const generateTokenWithUid = async (req: Request, res: Response) => {
   try {
@@ -14,6 +15,12 @@ const generateTokenWithUid = async (req: Request, res: Response) => {
         return res.status(200).json({
           message: "Token generated successfully",
           token,
+          data: {
+            uid,
+            role,
+            privilegeExpiredTs,
+            account,
+          },
         });
       }
       return res.status(400).json({
@@ -40,6 +47,12 @@ const generateTokenWithAccount = async (req: Request, res: Response) => {
         return res.status(200).json({
           message: "Token generated successfully",
           token,
+          data: {
+            uid,
+            role,
+            privilegeExpiredTs,
+            account,
+          },
         });
       }
       return res.status(400).json({
